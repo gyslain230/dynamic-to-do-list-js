@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const taskInput= document.getElementById("task-input"); 
     const taskList=document.getElementById("task-list");
     //function of controling the adding of tasks
-    function addtask() {
+    function addTask() {
         const taskText=taskInput.value.trim();
         if (taskText.value=="") {
             alert(" prompt the user to enter a task."); 
@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
     }
     // adding functionalities to the add button so as to respond to when enter button is clicked and on click
-    addButton.addEventListener("click",addtask);
+    addButton.addEventListener("click",addTask);
     taskInput.addEventListener("keypress",()=>{
         if (Event.key=="Enter"){
-            addtask();
+            addTask();
             
         }
 
