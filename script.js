@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
     }
-    function addTask() {
+    function addTask( taskText, save = true) {
         const taskText=taskInput.value.trim();
         if (taskText.value=="") {
             alert(" prompt the user to enter a task."); 
@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 
+        }
+        //saving the task list on the local storage system
+        if (save) {
+            const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+            storedTasks.push(taskText);
+            localStorage.setItem('tasks', JSON.stringify(storedTasks));
         }
 
         
