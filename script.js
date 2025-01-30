@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // adding functionalities to the add button so as to respond to when enter button is clicked and on click
     addButton.addEventListener("click",addTask);
     taskInput.addEventListener("keypress",()=>{
-        if (Event.key=="Enter"){
+        if (event.key =="Enter"){
             addTask();
             
         }
